@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const tests = shortenStack => {
+const tests = (shortenStack) => {
   const dir = process.cwd();
 
   const empty = shortenStack(dir, '');
@@ -17,7 +17,7 @@ const tests = shortenStack => {
   assert(typeof stack === 'string');
   assert(stack.includes(dir));
   assert(!short.includes(dir));
-  assert.equal(stack[0], short[0]);
+  assert.equal(stack.split('\n')[0], short.split('\n')[0]);
   assert.equal(stack.split('\n').length, short.split('\n').length);
 
   const notInc = shortenStack('/unknown/path', stack);
