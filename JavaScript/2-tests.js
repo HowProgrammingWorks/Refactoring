@@ -1,6 +1,6 @@
 'use strict';
 
-const assert = require('assert');
+const assert = require('node:assert');
 
 const tests = (shortenStack) => {
   const dir = process.cwd();
